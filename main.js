@@ -4,14 +4,12 @@ console.log('Yeah this is good!');
 //var, let, const
 //var - global
 //let, const - ES6
-
-var bird = 'Tico';
+var fish = 'tuna';
 let cat = 'Jack';
 const dog = 'Jill';
 
 //data types
 //String, Number, Boolean, null, undefined, Symbol
-
 const name = "John";
 const age = 30;
 const rating = 4.5;
@@ -122,6 +120,92 @@ const todoJSON = JSON.stringify(todo);
 console.log(todoJSON);
 
 //For loop
-for (var i = 0; i < array.length; i++) {
-    array[i]
+for (let i = 0; i < 10; i++) {
+    console.log(`For loop number: ${i}`);
+}
+
+//While loop
+let i = 0;
+while (i < 10) {
+    console.log(`While loop number: ${i}`);
+    i++
+}
+
+//Loop through array
+for (let i = 0; i < todo.length; i++) {
+    console.log(todo[i].text);
+}
+
+//For of loop - ES6
+for (let item of todo) {
+    console.log(item.text);
+}
+
+//High order array methods - forEach, map, filter
+todo.forEach(function(item) {
+    console.log(item.text);
+});
+
+const todoText = todo.map(function(item) { //return array
+    return item.text;
+});
+console.log(todoText);
+
+const todoId = todo.filter(function (item) {  //return array
+    return item.isCompleted == true;
+});
+console.log(todoId);
+
+//Chain multiple functions
+const todoChained = todo.filter(function (item) {  //return array
+    return item.isCompleted == true;
+}).map(function(item){
+    return item.text;
+});
+console.log(todoChained);
+
+//Conditional statements
+// == match value, === match value + data type
+// > greater than, < less than, || or, && and ! not, <= =>, !=
+const ten = 10;
+if (ten == 10) {
+    console.log(`Ten is: ${ten}`);
+}
+
+const two = '2';
+if (two === 2) {
+    console.log('Two is a number');
+} else {
+    console.log('Two is not a number');
+}
+
+const bird = 'sparrow';
+if (bird === 'crow') {
+    console.log('Birds is a crow');
+} else if (bird == 'sparrow') {
+    console.log('Birds is a sparrow');
+} else {
+    console.log('Birds is unknown');
+}
+
+//Shorthand if (
+const tag = 'red';
+const color = tag == 'red' ? 'Red' : 'Blue';
+console.log(color);
+
+
+//Switch case
+const time = 'night';
+switch (time) {
+    case 'morning':
+        console.log('Good morning.');
+        break;
+    case 'afternoon':
+        console.log('Good afternoon.');
+        break;
+    case 'night':
+        console.log('Good night.');
+        break;
+    default:
+        console.log('Have a nice day.');
 }
