@@ -209,3 +209,50 @@ switch (time) {
     default:
         console.log('Have a nice day.');
 }
+
+//functions
+// Default values are optional
+function addNumber(a = 1, b = 1) {
+    return a + b;
+}
+console.log(addNumber(1,2));
+
+//Arrow function - ES6
+const addNums = (a, b) => a + b; //single line, if multiple wrap with {}
+console.log(addNums(1,2));
+
+const addFive = a => a + 5;
+console.log(addFive(3));
+
+//Object oriented programming
+//Object - Constructor function
+function Person(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob); //date constructor
+
+    this.getBirthYear = function () {
+        return this.dob.getFullYear();
+    }
+
+    this.getFullName = function () {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+//Instantiate object
+const person1 = new Person('Jhon', 'Doe', '4-1-1980');
+const person2 = new Person('Mary', 'Doe', '3-1-1983');
+console.log(person1);
+console.log(person1.getFullName(), person1.getBirthYear());
+
+//Object - Prototype
+Person.prototype.getLastName = function () {
+    return this.lastName;
+};
+console.log(person2.getLastName());
+
+//Class - ES6
+class {
+    constructor
+}
