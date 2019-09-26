@@ -253,6 +253,42 @@ Person.prototype.getLastName = function () {
 console.log(person2.getLastName());
 
 //Class - ES6
-class {
-    constructor
+class Dog {
+    constructor (breed, color) {
+        this.breed = breed;
+        this.color = color;
+    }
+
+    getBread() {
+        return this.breed;
+    }
+
+    getColor() {
+        return this.color;
+    }
 }
+
+const dog1 = new Dog('Golden Retriever', 'Gold');
+console.log(dog1);
+
+//DOM
+//Single element selectors
+console.log(document.getElementById("my-form"));
+console.log(document.querySelector(".container"));
+
+//Multiple element selectors
+console.log(document.getElementsByClassName("item"));
+console.log(document.getElementsByTagName("li"));
+console.log(document.querySelectorAll(".item"));
+
+const items = document.querySelectorAll('.ibtem');
+items.forEach((item) => console.log(item));
+
+const ul = document.querySelector('.items');
+//ul.remove();
+//ul.lastElementChild.remove();
+
+ul.firstElementChild.textContent = "hello";
+
+
+
