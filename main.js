@@ -285,10 +285,21 @@ const items = document.querySelectorAll('.ibtem');
 items.forEach((item) => console.log(item));
 
 const ul = document.querySelector('.items');
+
 //ul.remove();
 //ul.lastElementChild.remove();
 
 ul.firstElementChild.textContent = "hello";
+ul.children[1].innerText = "hello";
+ul.children[2].innerHTML = "<h4>Hello</h4>";
 
+//styles
+const btn = document.querySelector('.btn');
+btn.style.background = 'red';
+btn.classList.add('red');
 
-
+//event listener
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+   console.log(e);
+});
